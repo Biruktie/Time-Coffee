@@ -6,7 +6,6 @@ import Image from "next/image";
 export default function ContactHero() {
   return (
     <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
-      {/* Background Image */}
       <Image
         src="/contact/cafe-exterior-2.jpg"
         alt="Exterior of Time Coffee shop"

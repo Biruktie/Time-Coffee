@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// Example seasonal items
 const seasonalItems = [
   {
     name: "Pumpkin Spice Latte",

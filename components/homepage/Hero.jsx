@@ -28,7 +28,6 @@ export default function Hero() {
           className="object-cover brightness-[0.82]"
         />
 
-        {/* Darkening gradient for text clarity + section flow */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-[#2c1810]/90" />
       </div>
 

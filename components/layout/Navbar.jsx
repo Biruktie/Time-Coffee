@@ -15,12 +15,10 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // ✅ Mount guard
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // ✅ Scroll listener (client only)
   useEffect(() => {
     if (!mounted) return;
 
@@ -28,7 +26,7 @@ export default function Navbar() {
       setScrolled(window.scrollY > 100);
     };
 
-    handleScroll(); // run once
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [mounted]);

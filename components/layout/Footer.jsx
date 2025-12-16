@@ -12,11 +12,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-/* ✅ Stable references outside component */
 const socialIcons = [Instagram, Facebook, Twitter];
 
 export default function Footer() {
-  /* ✅ No state, deterministic value */
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
@@ -24,8 +22,8 @@ export default function Footer() {
       title: "Explore",
       links: [
         { name: "Menu", href: "/menu" },
-        { name: "Locations", href: "/#locations" },
-        { name: "Events", href: "/events" },
+        +{ name: "Locations", href: "/contact#map" },
+        { name: "Events", href: "/#events" },
       ],
     },
     {
@@ -88,13 +86,24 @@ export default function Footer() {
               <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="group inline-flex items-center gap-2 text-sm text-amber-200/80 hover:text-amber-300 transition-colors duration-150"
-                    >
-                      <span>{link.name}</span>
-                      <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-150" />
-                    </Link>
+                    {column.title === "Company" ? (
+                      <span
+                        className="inline-flex items-center gap-2 text-sm text-amber-300/60 cursor-not-allowed opacity-60"
+                        aria-disabled="true"
+                        title="Coming soon"
+                      >
+                        <span>{link.name}</span>
+                        <ArrowRight className="w-3 h-3 text-amber-300/60" />
+                      </span>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="group inline-flex items-center gap-2 text-sm text-amber-200/80 hover:text-amber-300 transition-colors duration-150"
+                      >
+                        <span>{link.name}</span>
+                        <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-opacity transition-transform duration-150" />
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -143,15 +152,27 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-amber-300 transition">
+            <span
+              className="text-amber-300/60 cursor-not-allowed opacity-60"
+              aria-disabled="true"
+              title="Coming soon"
+            >
               Privacy
-            </Link>
-            <Link href="/terms" className="hover:text-amber-300 transition">
+            </span>
+            <span
+              className="text-amber-300/60 cursor-not-allowed opacity-60"
+              aria-disabled="true"
+              title="Coming soon"
+            >
               Terms
-            </Link>
-            <Link href="/sitemap" className="hover:text-amber-300 transition">
+            </span>
+            <span
+              className="text-amber-300/60 cursor-not-allowed opacity-60"
+              aria-disabled="true"
+              title="Coming soon"
+            >
               Sitemap
-            </Link>
+            </span>
           </div>
         </div>
       </div>

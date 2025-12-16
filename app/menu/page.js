@@ -4,7 +4,6 @@ import MenuCategory from "@/components/menu/MenuCategory";
 import DietaryInfo from "@/components/menu/DietaryInfo";
 import SeasonalSpecials from "@/components/menu/SeasonalSpecials";
 
-// Import your menu data
 import {
   coffeeItems,
   teaItems,
@@ -13,7 +12,6 @@ import {
 } from "@/lib/data/menuItems";
 
 export default function MenuPage() {
-  // Define categories dynamically
   const categories = [
     {
       title: "Coffee & Espresso",
@@ -42,7 +40,6 @@ export default function MenuPage() {
       <MenuHero />
 
       <div className="container mx-auto px-6 py-12 space-y-16">
-        {/* Render all categories dynamically */}
         {categories.map((category) => (
           <MenuCategory
             key={category.title}
@@ -52,7 +49,6 @@ export default function MenuPage() {
           />
         ))}
 
-        {/* Dietary Info & Seasonal Specials */}
         <DietaryInfo />
         <SeasonalSpecials />
       </div>
