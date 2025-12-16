@@ -12,17 +12,16 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const socialIcons = [Instagram, Facebook, Twitter];
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const socialIcons = [Instagram, Facebook, Twitter];
 
   const footerLinks = [
     {
       title: "Explore",
       links: [
         { name: "Menu", href: "/menu" },
-        +{ name: "Locations", href: "/contact#map" },
+        { name: "Locations", href: "/contact#map" },
         { name: "Events", href: "/#events" },
       ],
     },
@@ -39,9 +38,6 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-[#120805] text-amber-200 pt-24 pb-10 shadow-[inset_0_30px_60px_rgba(0,0,0,0.85)]">
-      {/* Top glow */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-900/40 to-transparent" />
-
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 mb-14">
           {/* Brand */}
@@ -57,24 +53,6 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-
-            <p className="text-sm text-amber-200/90 mb-6 leading-relaxed">
-              Premium beans, warm spaces, and unforgettable coffee experiences —
-              brewed fresh every day.
-            </p>
-
-            <div className="flex gap-4">
-              {socialIcons.map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  aria-label="Social link"
-                  className="p-2 rounded-lg bg-amber-900/60 hover:bg-amber-900/80 transform hover:-translate-y-1 transition duration-150 ease-out"
-                >
-                  <Icon size={20} className="text-amber-300" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Links */}
@@ -86,24 +64,13 @@ export default function Footer() {
               <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link.name}>
-                    {column.title === "Company" ? (
-                      <span
-                        className="inline-flex items-center gap-2 text-sm text-amber-300/60 cursor-not-allowed opacity-60"
-                        aria-disabled="true"
-                        title="Coming soon"
-                      >
-                        <span>{link.name}</span>
-                        <ArrowRight className="w-3 h-3 text-amber-300/60" />
-                      </span>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        className="group inline-flex items-center gap-2 text-sm text-amber-200/80 hover:text-amber-300 transition-colors duration-150"
-                      >
-                        <span>{link.name}</span>
-                        <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-opacity transition-transform duration-150" />
-                      </Link>
-                    )}
+                    <Link
+                      href={link.href}
+                      className="group inline-flex items-center gap-2 text-sm text-amber-200/80 hover:text-amber-300 transition-colors duration-150"
+                    >
+                      <span>{link.name}</span>
+                      <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-opacity transition-transform duration-150" />
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -113,7 +80,6 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="font-semibold text-amber-50 mb-5">Contact Us</h3>
-
             <ul className="space-y-4 text-sm">
               <li className="flex gap-3">
                 <MapPin size={18} className="text-amber-400 mt-0.5" />
@@ -123,12 +89,10 @@ export default function Footer() {
                   Downtown, City 10001
                 </span>
               </li>
-
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-amber-400" />
                 <span className="text-amber-200/80">(123) 456-7890</span>
               </li>
-
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-amber-400" />
                 <span className="text-amber-200/80">hello@timecoffee.com</span>
@@ -137,7 +101,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="h-px bg-amber-900/40 my-10" />
 
         {/* Bottom */}
@@ -145,35 +108,10 @@ export default function Footer() {
           <p className="text-amber-300/50">
             © {currentYear} Time Coffee. All rights reserved.
           </p>
-
           <p className="flex items-center gap-2 text-amber-300/50">
             Crafted with <Coffee className="w-4 h-4 text-amber-400" /> by
             passionate brewers
           </p>
-
-          <div className="flex gap-6">
-            <span
-              className="text-amber-300/60 cursor-not-allowed opacity-60"
-              aria-disabled="true"
-              title="Coming soon"
-            >
-              Privacy
-            </span>
-            <span
-              className="text-amber-300/60 cursor-not-allowed opacity-60"
-              aria-disabled="true"
-              title="Coming soon"
-            >
-              Terms
-            </span>
-            <span
-              className="text-amber-300/60 cursor-not-allowed opacity-60"
-              aria-disabled="true"
-              title="Coming soon"
-            >
-              Sitemap
-            </span>
-          </div>
         </div>
       </div>
     </footer>

@@ -1,4 +1,5 @@
 // app/about/page.js
+"use client";
 import AboutHero from "@/components/about/AboutHero";
 import OurStory from "@/components/about/OurStory";
 import OurTeam from "@/components/about/OurTeam";
