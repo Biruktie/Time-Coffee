@@ -3,7 +3,7 @@
 
 export default function MapSection() {
   return (
-    <section className="h-[400px] w-full">
+    <section className="h-[400px] w-full" id="locations">
       <iframe
         title="Cafe Location"
         src="https://maps.google.com/maps?q=Addis%20Ababa&t=&z=13&ie=UTF8&iwloc=&output=embed"

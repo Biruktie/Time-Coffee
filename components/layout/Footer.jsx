@@ -24,7 +24,7 @@ export default function Footer() {
       title: "Explore",
       links: [
         { name: "Menu", href: "/menu" },
-        { name: "Locations", href: "/locations" },
+        { name: "Locations", href: "/#locations" },
         { name: "Gallery", href: "/gallery" },
         { name: "Events", href: "/events" },
       ],
